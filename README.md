@@ -173,9 +173,7 @@ FROM Orders o
 GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.orderDate)
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
-```
-___
-```
+
 <center>
     
 ![ts](https://i.imgur.com/gBqeAHk.png?2)
