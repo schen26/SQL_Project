@@ -1,6 +1,6 @@
 # SQL_Project
 
-> This SQL Project was done to strengthen what had been taught and learnt during the second week of Sparta training course.
+> This SQL Project was used to strengthen what had been taught and learnt during the second week of Sparta training course.
 >
 >All answers are produced through the used of data in the **Northwind** database.
 ## Exercise 1
