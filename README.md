@@ -1,8 +1,14 @@
 # SQL_Project
 
-> This SQL Project was used to strengthen what had been taught and learnt during the second week of Sparta training course.
->
+This SQL Project was used to strengthen what had been taught and learnt during the second week of Sparta training course.
+
 >All answers are produced through the used of data in the **Northwind** database.
+
+## Contents
+* [Exercise 1](#exercise-1)
+   * [1.1](#1.1)
+   * [1.2](#1.2)
+
 ## Exercise 1
 ### 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
 ```
