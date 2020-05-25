@@ -4,13 +4,11 @@
 ## Exercise 1
 ### 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
 ```
-
 USE Northwind 
 
 SELECT c.CustomerID, c.CompanyName, c.Address 
 FROM Customers c
 WHERE c.City IN ('Paris', 'London') --shorthand for OR operator
-
 ```
 ### 1.2 List all products stored in bottles.
 
