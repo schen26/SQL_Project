@@ -6,8 +6,9 @@ This SQL Project was used to strengthen what had been taught and learnt during t
 
 ## Contents
 * [Exercise 1](#exercise-1)
-   * [1.1](#1.1)
-   * [1.2](#1.2)
+* [Exercise 2](#exercise-2)
+* [Exercise 3](#exercise-3)
+   
 
 ## Exercise 1
 ### 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
