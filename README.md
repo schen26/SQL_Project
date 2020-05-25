@@ -172,7 +172,10 @@ GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.order
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
 ```
+
+```
 <p align="center">
   ![ts](https://i.imgur.com/gBqeAHk.png?2)
 </p>
+```
 
