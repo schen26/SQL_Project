@@ -130,9 +130,7 @@ GROUP BY s.CompanyName
 HAVING SUM(od.Quantity*od.UnitPrice*(1-od.Discount))>10000
 ORDER BY SUM(od.Quantity*od.UnitPrice) DESC
 ```
-<center>
-![astbm][astbm]
-</center>
+![astbm](https://i.imgur.com/XH22e4O.png?4)
 ### 3.3 List the Top 10 Customers YTD for the latest year in the Orders file. Based on total value of orders shipped. No Excel required. (10 Marks)
 ```
 SELECT * FROM Customers
@@ -173,13 +171,5 @@ FROM Orders o
 GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.orderDate)
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
-
-<center>
-    
-![ts](https://i.imgur.com/gBqeAHk.png?2)
-
-</center>
 ```
-
-[astbm]: https://i.imgur.com/XH22e4O.png?4
-[ts]: https://i.imgur.com/gBqeAHk.png?2
+![ts](https://i.imgur.com/gBqeAHk.png?2)
