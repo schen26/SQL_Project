@@ -171,11 +171,9 @@ FROM Orders o
 GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.orderDate)
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
-
-
-
+```
 <p align="center">
   <img width="460" height="300" src="http://www.fillmurray.com/460/300">
 </p>
-```
+
 
