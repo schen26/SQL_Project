@@ -1,6 +1,8 @@
 # SQL_Project
 
-> All answers are produced through the used of data in the **Northwind** database.
+> This SQL Project was done to strengthen what had been taught and learnt during the second week of Sparta training course.
+>
+>All answers are produced through the used of data in the **Northwind** database.
 ## Exercise 1
 ### 1.1 Write a query that lists all Customers in either Paris or London. Include Customer ID, Company Name and all address fields.
 ```
@@ -169,3 +171,4 @@ GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.order
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
 ```
+![Average Ship Time by Month](C:\Users\Simon\Desktop\Sparta Global\Week 2 SQL)
