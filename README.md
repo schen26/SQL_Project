@@ -173,7 +173,7 @@ ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
 ```
 <p align="center">
-  ![ts](https://i.imgur.com/gBqeAHk.png?2)
+  <img width="475" height="280" src="https://i.imgur.com/gBqeAHk.png?2">
 </p>
 
 
