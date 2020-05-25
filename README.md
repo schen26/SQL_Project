@@ -174,7 +174,7 @@ GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.order
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 */
 ```
-
+___
 ```
 <center>
     
