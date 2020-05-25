@@ -174,5 +174,5 @@ ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 ```
 ![ts][ts]
 
-[astbm]: https://imgur.com/XH22e4O
-[ts]: https://imgur.com/XH22e4O
+[astbm]: https://imgur.com/XH22e4O.png
+[ts]: https://imgur.com/XH22e4O.png
