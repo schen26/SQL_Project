@@ -175,4 +175,4 @@ ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
 ![ts][ts]
 
 [astbm]: https://i.imgur.com/XH22e4O.png?4
-[ts]: https://i.imgur.com/gBqeAHk.png?1
+[ts]: https://i.imgur.com/gBqeAHk.png?2
