@@ -11,39 +11,39 @@ FROM Customers c
 WHERE c.City IN ('Paris', 'London') --shorthand for OR operator
 ```
 ### 1.2 List all products stored in bottles.
-
-`SELECT * FROM Products p
+```
+SELECT * FROM Products p
 
 SELECT p.ProductName 
 FROM Products p
-WHERE p.QuantityPerUnit LIKE '%bottle%' --wildcard % means zero or more random characters`
-
+WHERE p.QuantityPerUnit LIKE '%bottle%' --wildcard % means zero or more random characters
+```
 ### 1.3 Repeat question above, but add in the Supplier Name and Country.
-
-`SELECT * FROM Suppliers s
+```
+SELECT * FROM Suppliers s
 
 SELECT p.ProductName, s.CompanyName, s.Country 
 FROM Products p INNER JOIN Suppliers s ON p.SupplierID=s.SupplierID --INNER JOIN combines tables when both values match 
-WHERE p.QuantityPerUnit LIKE '%bottle%'`
-
+WHERE p.QuantityPerUnit LIKE '%bottle%'
+```
 ### 1.4 Write an SQL Statement that shows how many products there are in each category. Include Category Name in result set and list the highest number first.
-
-`SELECT * FROM Products
+```
+SELECT * FROM Products
 
 SELECT p.CategoryID, COUNT(p.ProductID) AS "Number of Products" --aliasing requires double quotes
 FROM Products p
 GROUP BY p.CategoryID --group the sum of quantity to the matched category
-ORDER BY COUNT(p.ProductID) DESC --reverse order; default is ASC; here the most quantity is at top`
-
+ORDER BY COUNT(p.ProductID) DESC --reverse order; default is ASC; here the most quantity is at top
+```
 ### 1.5 List all UK employees using concatenation to join their title of courtesy, first name and last name together. Also include their city of residence.
-
-`SELECT CONCAT(e.TitleOfCourtesy,' ',e.FirstName,' ',e.LastName), e.City --concatenting strings together
+```
+SELECT CONCAT(e.TitleOfCourtesy,' ',e.FirstName,' ',e.LastName), e.City --concatenting strings together
 FROM Employees e
-WHERE e.Country='UK'`
-
+WHERE e.Country='UK'
+```
 ### 1.6 List Sales Totals for all Sales Regions (via the Territories table using 4 joins) with a Sales Total greater than 1,000,000. Use rounding or FORMAT to present the numbers. 
-
-`SELECT * FROM [Sales Totals by Amount]
+```
+SELECT * FROM [Sales Totals by Amount]
 SELECT * FROM Region
 SELECT * FROM Territories
 SELECT * FROM EmployeeTerritories
@@ -63,31 +63,31 @@ HAVING SUM(od.Quantity*od.UnitPrice*(1-od.Discount))>1000000 --filter the data w
 /*
 ANOTHER WAY TO SHOWCASE TOTAL SALES IS AS BELOW (SHOWS DOLLARS)
 FORMAT(SUM(od.Quantity*od.UnitPrice*(1-od.Discount)), 'c')
-*/`
-
+*/
+```
 ### 1.7 Count how many Orders have a Freight amount greater than 100.00 and either USA or UK as Ship Country.
-
-`SELECT * FROM Orders
+```
+SELECT * FROM Orders
 
 SELECT COUNT(Freight) AS "Freight"
 FROM Orders o
-WHERE o.ShipCountry IN ('USA','UK') AND o.Freight>100`
-
+WHERE o.ShipCountry IN ('USA','UK') AND o.Freight>100
+```
 ### 1.8 Write an SQL Statement to identify the Order Number of the Order with the highest amount of discount applied to that order.
-
-`SELECT * FROM Orders
+```
+SELECT * FROM Orders
 SELECT * FROM [Order Details]
 
 SELECT TOP 1 od.OrderID, SUM(od.UnitPrice*od.Quantity*od.Discount) AS "Discount Amount" --sum of all the discounts given
 FROM [Order Details] od
 GROUP BY od.OrderID
-ORDER BY SUM(od.UnitPrice*od.Quantity*od.Discount) DESC`
-
+ORDER BY SUM(od.UnitPrice*od.Quantity*od.Discount) DESC
+```
 ___
 ## Exercise 2
 ### 2.1 Write the correct SQL statement to create the following table: Spartans Table – include details about all the Spartans on this course. Separate Title, First Name and Last Name into separate columns, and include University attended, course taken and mark achieved. Add any other columns you feel would be appropriate. 
-
-`DROP TABLE spartans
+```
+DROP TABLE spartans
 
 --Creating a table with column titles listed within the brackets
 CREATE TABLE spartans (
@@ -97,40 +97,40 @@ CREATE TABLE spartans (
     University VARCHAR(30),
     Course VARCHAR(30),
     Mark VARCHAR(30)
-)`
-
+)
+```
 ### 2.2 Write SQL statements to add the details of the Spartans in your course to the table you have created.
-
-`--Inserting values into the 'spartans' table. The values is in sequence with the its repective columns 
+```
+--Inserting values into the 'spartans' table. The values is in sequence with the its repective columns 
 INSERT INTO spartans
 VALUES (
     'Mr','Joe','Johnson','Sheffield','Art History','1st'
 )
 
-SELECT * FROM spartans`
-
+SELECT * FROM spartans
+```
 ___
 ## Exercise 3
 ### 3.1 List all Employees from the Employees table and who they report to. No Excel required. (5 Marks)
-
-`SELECT * FROM Employees
+```
+SELECT * FROM Employees
 
 SELECT e.TitleOfCourtesy+' '+e.FirstName+' '+e.LastName AS "Employee Name", ee.TitleOfCourtesy+' '+ee.FirstName+' '+ee.LastName AS "Reports To", e.ReportsTo
-FROM Employees e LEFT JOIN Employees ee ON e.ReportsTo = ee.EmployeeID`
-
+FROM Employees e LEFT JOIN Employees ee ON e.ReportsTo = ee.EmployeeID
+```
 ### 3.2 List all Suppliers with total sales over $10,000 in the Order Details table. Include the Company Name from the Suppliers Table and present as a bar chart as below: (5 Marks)
-
-`SELECT s.CompanyName, SUM(od.Quantity*od.UnitPrice*(1-od.Discount)) AS "Total Sales"
+```
+SELECT s.CompanyName, SUM(od.Quantity*od.UnitPrice*(1-od.Discount)) AS "Total Sales"
 FROM Suppliers s INNER JOIN Products p 
 ON s.SupplierID=p.SupplierID INNER JOIN [Order Details] od 
 ON p.ProductID=od.ProductID
 GROUP BY s.CompanyName
 HAVING SUM(od.Quantity*od.UnitPrice*(1-od.Discount))>10000
-ORDER BY SUM(od.Quantity*od.UnitPrice) DESC`
-
+ORDER BY SUM(od.Quantity*od.UnitPrice) DESC
+```
 ### 3.3 List the Top 10 Customers YTD for the latest year in the Orders file. Based on total value of orders shipped. No Excel required. (10 Marks)
-
-`SELECT * FROM Customers
+```
+SELECT * FROM Customers
 SELECT * FROM [Orders]
 SELECT * FROM [Order Details]
 
@@ -149,11 +149,11 @@ WHERE YEAR(o.ShippedDate)=(SELECT MAX(YEAR(ShippedDate))
                            From Orders)
 GROUP BY c.CustomerID, c.CompanyName
 ORDER BY SUM(UnitPrice * Quantity * (1-Discount)) DESC
-*/`
-
+*/
+```
 ### 3.4 Plot the Average Ship Time by month for all data in the Orders Table using a line chart as below. (10 Marks)
-
-`SELECT * FROM Orders
+```
+SELECT * FROM Orders
 
 SELECT CONCAT(MONTH(o.ShippedDate),'-',YEAR(o.ShippedDate)) AS "Month", AVG(DATEDIFF(dd,o.OrderDate,o.ShippedDate)) AS "Average Day"
 FROM Orders o
@@ -167,4 +167,5 @@ FROM Orders o
 --Date returns a specified part of a date in this case Months.
 GROUP BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate), DATENAME(MM,o.orderDate)
 ORDER BY DATEPART(yy,o.OrderDate), DATEPART(MM,o.OrderDate)
-*/`
+*/
+```
